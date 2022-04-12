@@ -9,7 +9,7 @@ What is numerical simulation?
 
 ### What happens when we drop an elastic ball?
 
-1. [First steps](/first-steps.html)
+1. [First steps](/durham-hackathon/first-steps.html)
 2. [Newton's first law](/newton.html)
 3. [Hitting the floor](/bounce.html))
 
