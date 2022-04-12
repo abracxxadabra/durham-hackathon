@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[Previous step](/first-steps.html)
+[Previous step](/durham-hackathon/first-steps.html)
 
 
 ## A first simulation: What happens when we drop an elastic ball?
