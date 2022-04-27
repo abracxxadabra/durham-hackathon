@@ -35,9 +35,11 @@ function builtinRead(x) {
     return Sk.builtinFiles["files"][x];
 }
 
+
+
 function runit() {
    var prog = document.getElementById("firststeps").value; 
-   Sk.configure({output:outf, read:builtinRead}); 
+   Sk.configure({read:builtinRead}); 
    (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'first-canvas';
    var myPromise = Sk.misceval.asyncToPromise(function() {
        return Sk.importMainWithBody("<stdin>", false, prog, true);
