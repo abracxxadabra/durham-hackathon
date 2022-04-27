@@ -85,10 +85,8 @@ Now let's rewrite the code for the falling ball from above with correct physics:
 <body> 
 
 <script type="text/javascript"> 
-// output functions are configurable.  This one just appends some text
-// to a pre element.
 function outf(text) { 
-    var mypre = document.getElementById("output"); 
+    var mypre = document.getElementById("newton-output"); 
     mypre.innerHTML = mypre.innerHTML + text; 
 } 
 function builtinRead(x) {
@@ -97,14 +95,13 @@ function builtinRead(x) {
     return Sk.builtinFiles["files"][x];
 }
 
-// Here's everything you need to run a python program in skulpt
 function runit() { 
-   var prog = document.getElementById("yourcode").value; 
-   var mypre = document.getElementById("output"); 
+   var prog = document.getElementById("newton-code").value; 
+   var mypre = document.getElementById("newton-output"); 
    mypre.innerHTML = ''; 
-   Sk.pre = "output";
+   Sk.pre = "newton-output";
    Sk.configure({output:outf, read:builtinRead}); 
-   (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
+   (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'newton-canvas';
    var myPromise = Sk.misceval.asyncToPromise(function() {
        return Sk.importMainWithBody("<stdin>", false, prog, true);
    });
@@ -117,9 +114,9 @@ function runit() {
 } 
 </script> 
 
-<h3>Try This</h3> 
+<h3>Add gravity:</h3> 
 <form> 
-<textarea id="yourcode2" cols="40" rows="10">import turtle
+<textarea id="newton-code" cols="40" rows="15">import turtle
 
 gravity = 9.81
 h = 0.008
@@ -135,13 +132,12 @@ while True:
     v = v + h*gravity
     y = ball.ycor() + h*v
     ball.sety(y)
-
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
 </form> 
-<pre id="output" ></pre> 
+<pre id="newton-output" ></pre> 
 <!-- If you want turtle graphics include a canvas -->
-<div id="mycanvas"></div> 
+<div id="newton-canvas"></div> 
 
 </body> 
 

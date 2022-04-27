@@ -5,5 +5,5 @@ show_downloads: false
 
 theme: jekyll-theme-hacker
 
-url: 'https://durham-hackathon.github.io/durham-hackathon'
-baseurl: 'durham-hackathon/'
+url: 'https://durham-hackathon.github.io/'
+baseurl: '/durham-hackathon'

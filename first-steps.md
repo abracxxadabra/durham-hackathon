@@ -28,30 +28,17 @@ The same functions exist for the x-coordinate, but we don't need those so far.
 <body> 
 
 <script type="text/javascript"> 
-// output functions are configurable.  This one just appends some text
-// to a pre element.
-function outf(text) { 
-    var mypre = document.getElementById("output"); 
-    mypre.innerHTML = mypre.innerHTML + text; 
-} 
+
 function builtinRead(x) {
     if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
             throw "File not found: '" + x + "'";
     return Sk.builtinFiles["files"][x];
 }
 
-// Here's everything you need to run a python program in skulpt
-// grab the code from your textarea
-// get a reference to your pre element for output
-// configure the output function
-// call Sk.importMainWithBody()
-function runit() { 
-   var prog = document.getElementById("yourcode").value; 
-   var mypre = document.getElementById("output"); 
-   mypre.innerHTML = ''; 
-   Sk.pre = "output";
+function runit() {
+   var prog = document.getElementById("firststeps").value; 
    Sk.configure({output:outf, read:builtinRead}); 
-   (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
+   (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'first-canvas';
    var myPromise = Sk.misceval.asyncToPromise(function() {
        return Sk.importMainWithBody("<stdin>", false, prog, true);
    });
@@ -61,12 +48,12 @@ function runit() {
        function(err) {
        console.log(err.toString());
    });
-} 
+}
 </script> 
 
-<h3>Try This</h3> 
+<h3>First Steps:</h3> 
 <form> 
-<textarea id="firststeps" cols="40" rows="12">import turtle
+<textarea id="firststeps" cols="60" rows="12">import turtle
 
 ball = turtle.Turtle()
 ball.penup()
@@ -74,10 +61,11 @@ ball.color("red")
 ball.shape("circle")
 
 while True:
-    ball.sety(ball.ycor() - 1)
+    #TODO: Place your code here
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
-</form> 
+</form>
+
 <div id="first-canvas"></div> 
 
 </body> 
