@@ -108,9 +108,11 @@ function runit() {
    myPromise.then(function(mod) {
        console.log('success');
    },
-       function(err) {
-       console.log(err.toString());
-   });
+   function (err) {
+  console.info('errorHandler', err);
+  var msg = err.toString();
+  }
+   );
 } 
 </script> 
 
@@ -129,9 +131,6 @@ ball.shape("circle")
 
 while True:
     # Add your code here
-    v = v + h*gravity
-    y = ball.ycor() + h*v
-    ball.sety(y)
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
 </form> 
@@ -143,6 +142,6 @@ while True:
 
 </html>
 
+The solution can be found [here](https://github.com/Durham-Hackathon/durham-hackathon/code/step2-sol.py)
 
-
-
+[Next step](/durham-hackathon/bounce.html)

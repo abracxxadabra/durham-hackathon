@@ -73,7 +73,7 @@ while True:
 </body> 
 
 </html> 
-If you want you can have a look a the solution [here](/code/step-1-sol.py).
+If you want you can have a look a the solution [here](https://github.com/Durham-Hackathon/durham-hackathon/code/step1-sol.py).
 
 This "simulation" is not very physical so let's try to figure out how the ball should actually move.
 

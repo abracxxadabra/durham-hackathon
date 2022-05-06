@@ -11,7 +11,8 @@ What is numerical simulation?
 
 1. [First steps](/durham-hackathon/first-steps.html)
 2. [Newton's first law](/durham-hackathon/newton.html)
-3. [Hitting the floor](/durham-hackathon/bounce.html))
+3. [Hitting the floor](/durham-hackathon/bounce.html)
+4. [Many balls](/durham-hackathon/many-balls.html)
 
 ### Some more advanced physics:
 
